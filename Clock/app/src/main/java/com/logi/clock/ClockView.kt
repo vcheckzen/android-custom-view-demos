@@ -134,11 +134,11 @@ class ClockView @JvmOverloads constructor(
         for (i in 1..60) {
             if (i % 5 != 0) drawAndRotateRoundRect(
                 canvas,
-                Color.argb(76, 255, 255, 255),
+                scaleColor,
                 3F,
                 30F,
                 i * 6F,
-                300F
+                CLOCK_RADIUS
             ) else {
                 positionNum(canvas, contentColor, "0", i, 35F, 285F, 6F)
             }
@@ -162,7 +162,7 @@ class ClockView @JvmOverloads constructor(
         drawCircle(canvas, secondPointerColor, 6F)
 
         // second
-        drawAndRotateRoundRect(canvas, secondPointerColor, 4F, 343F, angleSecond, 40F)
+        drawAndRotateRoundRect(canvas, secondPointerColor, 4F, CLOCK_RADIUS + 43, angleSecond, 40F)
 
         // circle small
         drawCircle(canvas, canvasBackgroundColor, 3F)
